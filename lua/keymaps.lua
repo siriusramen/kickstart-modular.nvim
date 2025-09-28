@@ -59,5 +59,6 @@ vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
 vim.keymap.set('n', '<leader>Y', [["+Y]])
 
 vim.keymap.set('n', '<leader>tn', '<Cmd>set relativenumber!<CR>', { desc = 'Toggle relative line numbers' })
+vim.keymap.set('n', '<leader>bb', '<Cmd>b#<CR>', { desc = ':b#' })
 
 -- vim: ts=2 sts=2 sw=2 et
