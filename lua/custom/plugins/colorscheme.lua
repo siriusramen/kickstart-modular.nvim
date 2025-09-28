@@ -1,21 +1,21 @@
 return {
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'rebelot/kanagawa.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
+  {
+    'neanias/everforest-nvim',
+    version = false,
+    lazy = false,
+    priority = 1000,
     config = function()
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'kanagawa'
+      require('everforest').setup {}
+      vim.cmd.colorscheme 'everforest'
     end,
   },
-  { 'folke/tokyonight.nvim', lazy = true },
+  { 'rebelot/kanagawa.nvim', lazy = true },
   { 'ellisonleao/gruvbox.nvim', lazy = true },
   { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
-  { 'thesimonho/kanagawa-paper.nvim', lazy = true },
   { 'rose-pine/neovim', name = 'rose-pine', lazy = true },
+  { 'rktjmp/lush.nvim', name = 'lush', lazy = true },
+  { 'ramojus/mellifluous.nvim', name = 'mellifluous', lazy = true },
+  { 'tiagovla/tokyodark.nvim', name = 'tokyodark', lazy = true },
+  { 'dgox16/oldworld.nvim', lazy = true },
+  { 'ficcdaf/ashen.nvim', lazy = true },
 }
