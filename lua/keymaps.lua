@@ -35,20 +35,24 @@ vim.keymap.set('n', '<leader>Y', [["+Y]])
 
 vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d')
 
-vim.keymap.set('n', '<leader>sr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set('n', '<leader>sr', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Search & Replace' })
 
-vim.keymap.set('n', '<leader>bf', function()
+vim.keymap.set('n', '<leader>tn', '<cmd>:set rnu!<CR>', { desc = 'Toggle relative number' })
+vim.keymap.set('n', '<TAB>', '<cmd>:bnext<CR>', { noremap = true })
+vim.keymap.set('n', '<BS>', '<cmd>:bprev<CR>', { noremap = true })
+
+vim.keymap.set('n', '<leader>lf', function()
   require('conform').format { async = true, lsp_format = 'fallback' }
 end, { desc = 'Format buffer' })
 
 ---@module 'snacks'
 vim.keymap.set('n', '<leader>f', function()
   Snacks.picker.files()
-end, { desc = 'Find Files' })
+end, { desc = 'Files' })
 
-vim.keymap.set('n', '<leader>,', function()
+vim.keymap.set('n', '<leader>b', function()
   Snacks.picker.buffers()
-end, { desc = 'Find Buffer' })
+end, { desc = 'Buffers' })
 
 vim.keymap.set('n', '<leader>cf', function()
   Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
@@ -60,7 +64,7 @@ end, { desc = 'Grep' })
 
 vim.keymap.set('n', '<leader>e', function()
   Snacks.explorer()
-end, { desc = 'File Explorer' })
+end, { desc = 'Explorer' })
 
 vim.keymap.set('n', '<leader>cs', function()
   Snacks.picker.colorschemes()
