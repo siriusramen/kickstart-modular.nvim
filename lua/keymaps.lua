@@ -54,7 +54,7 @@ vim.keymap.set('n', '<leader>cf', function()
   Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
 end, { desc = 'Config Files' })
 
-vim.keymap.set('n', '<leader>gg', function()
+vim.keymap.set('n', '<leader>g', function()
   Snacks.picker.grep()
 end, { desc = 'Grep' })
 
@@ -70,15 +70,15 @@ vim.keymap.set('n', '<leader>:', function()
   Snacks.picker.command_history()
 end, { desc = 'Command History' })
 
-vim.keymap.set('n', '<leader>gd', function()
+vim.keymap.set('n', '<leader>ld', function()
   Snacks.picker.lsp_definitions()
 end, { desc = 'Goto Definition' })
 
-vim.keymap.set('n', '<leader>gD', function()
+vim.keymap.set('n', '<leader>lD', function()
   Snacks.picker.lsp_declarations()
 end, { desc = 'Goto Declaration' })
 
-vim.keymap.set('n', '<leader>gr', function()
+vim.keymap.set('n', '<leader>lr', function()
   Snacks.picker.lsp_references()
 end, { desc = 'Goto Rerefence' })
 
